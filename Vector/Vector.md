@@ -1,6 +1,6 @@
 INDEX
 ============
-[0.Vector에 대한 접근](#0-unity에서-vector를-어떻게-이해해야-하는가?)  
+[0.Vector에 대한 접근](#0-unity에서-vector를-어떻게-이해해야-하는가)  
 [1.Vector의 뺄셈](#1-vector의-뺄셈)
 
 <br/>
