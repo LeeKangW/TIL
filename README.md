@@ -1,2 +1,6 @@
-# Unity_Document
-Document for Unity
+Unity_Document
+========================
+* 개발하면서 헷갈린 부분을 정리한 내용입니다.
+* 오류가 있다면 언제든지 말해주세요.
+
+
