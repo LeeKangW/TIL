@@ -4,4 +4,4 @@ Game Developer Document
 * 오류가 있다면 언제든지 말해주세요.
 
 ## Vector  
-[0.Vector란?](./Vector/What-is-a-Vector.md.md)
+[0.Vector란?](./Vector/What-is-a-Vector.md)
