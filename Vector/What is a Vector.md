@@ -1,0 +1,59 @@
+What is a Vector
+=================
+## Vector란?
+#### 정의
+* 유클리드 벡터(Euclidean Vector) 또는 벡터(Vector)는 유클리드 공간에서 크기와 방향을 모두 포함하는 기하학적 대상
+
+#### 기하학적 의미의 벡터
+* 벡터는 위치가 중요하지 않다 왜냐하면 위치가 바뀌여도 벡터의 크기와 방향이 변하지 않기 때문
+
+* 즉, **두 벡터가 길이가 같고 같은 방향을 가르킬 때 두 벡터는 상등(Equal)하다** 라고 할 수 있다
+
+# 벡터의 연산
+### 벡터의 덧셈
+* 벡터의 덧셈은 두 벡터를 결합하여 새로운 벡터를 만든다
+
+* AB벡터 + BC벡터 = AC벡터
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124054377-d6c4cc00-da5c-11eb-8e9f-0fa20a04f43e.png" width="30%" height="30%">
+  
+***
+
+### 벡터의 뺄셈
+* 두번 째 벡터의 종점에서 첫번 째 벡터의 종점으로 이어진다.
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124054520-1db2c180-da5d-11eb-898b-2f22d51e7833.png" width="30%" height="30%">
+  
+***
+
+### 벡터의 내적
+* a벡터와 b벡터가 이루는 각이 Θ일 때, 두 벡터의 크기와 두 벡터가 이루는 각의 코사인 값을 곱으로 계산
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124055022-222baa00-da5e-11eb-8e09-a8e41e7e81b4.png" width="30%" height="30%">
+
+
+##### 벡터의 내적 특징
+* 내적의 결과는 **스칼라** 값이다. 따라서 내적을 연속해서 계산할 수 없다.
+
+* 두 벡터 중 하나가 **영벡터**일 때 **내적의 값은 0**이다. ( 영벡터의 크기가 0이기 때문 )
+ 
+* **동일한 벡터**끼리의 내적은 **벡터 크기의 제곱**이다.
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124055426-d5949e80-da5e-11eb-88a9-d9b84d940147.png" width="30%" height="30%">
+
+* 두 벡터가 이루는 각이 **90도(수직)** 이면 **내적의 값은 0**이다.
+
+***
+
+#### 벡터의 외적
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124056247-4daf9400-da60-11eb-8614-e5458884955f.png" width="10%" height="10%">
+  
+(a cross b 라 읽는다. )
+
+* 결과 값은 벡터이다.
+* 결과 벡터의 방향 : 두 벡터에 동시에 **수직인 방향**
+* 결과 벡터의 크기 : a벡터와 b벡터 크기를 변으로하는 평행사변형의 넓이
+* **법선 벡터 == 벡터의 외적**  
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/48194683/124056727-38873500-da61-11eb-9a03-cc360c2ca91f.png" width="50%" height="50%">
