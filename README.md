@@ -22,3 +22,6 @@ Game Developer Document
 [1. Vector 와 Quaternion 연산](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Vector-%EC%99%80-Quaternion%EC%9D%98-%EC%97%B0%EC%82%B0.md) 
 #### 구현 방법
 [1. 3인칭 RPG 게임 내 캐릭터 움직임 구현 방법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/3%EC%9D%B8%EC%B9%AD%20%EC%BA%90%EB%A6%AD%ED%84%B0%20%EC%9B%80%EC%A7%81%EC%9E%84%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%A6%AC.md)  
+
+#### 메모리 누수
+[메모리 누수 방지 방법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EB%88%84%EC%88%98%20%EB%B0%A9%EC%A7%80%EB%B2%95.md)
