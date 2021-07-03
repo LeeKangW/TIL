@@ -1,5 +1,6 @@
 Game Developer Document
 ========================
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 * 개발을 하면서 개인적으로 정리하고 싶은 내용들이 정리되어 있습니다.
 * 오류가 있다면 언제든지 말해주세요.
 
