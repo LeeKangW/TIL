@@ -16,7 +16,7 @@ Game Developer Document
 [1. 표준 날짜 및 시간 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/standard-date-and-time-format-strings)  
 [2. 사용자 지정 날짜 및 시간 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
 #### 메모리 관리
-[1. Strong Reference 와 Weak Reference](C#/strong_reference_와_weak_reference.md)
+[1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
 ***
 ## Unity
 #### 연산
