@@ -7,7 +7,7 @@ Game Developer Document
 Design pattern
 ===
 ### State Pattern
-
+[State Pattern(상태 패턴)](/Design Pattern/State_Pattern.md)
 ### Component Pattern
 
 ### observer pattern
