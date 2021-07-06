@@ -1,7 +1,7 @@
 # Vector
-### Vector(A) * Quaternion(B)
+### Quaternion(A) * Vector(B)
 * 결과 자료형 : Vector
-* 결과 값 : A 벡터를 B 만큼 회전한 벡터 값
+* 결과 값 : B 벡터를 A 만큼 회전한 벡터 값
 
 ***
 # Quaternion
