@@ -37,7 +37,7 @@ Language
 [1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
 
 #### Garbage Collection
-
+[Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection.md)
 
 Game Engine
 ===
