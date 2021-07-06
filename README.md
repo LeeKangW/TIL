@@ -35,7 +35,9 @@ Language
 
 #### 메모리 관리
 [1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
-***
+
+#### Garbage Collection
+
 
 Game Engine
 ===
@@ -50,5 +52,8 @@ Game Engine
 ### Rendering Pipeline
 [Rendering Pipeline](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Rendering%20Pipeline.md)
 
+
+Others
+===
 ### 메모리 누수
 [메모리 누수 방지 방법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EB%88%84%EC%88%98%20%EB%B0%A9%EC%A7%80%EB%B2%95.md)
