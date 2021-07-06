@@ -12,7 +12,7 @@ State_Pattern
 * 구현한 상태 Class 기능에 변화가 생겨도 **Class의 내부 기능만 수정**하면 되기에 **수정이 용이함**
 
 # 3.구현 방법
-* Interface(또는 abstract)를 통해 State Pattern으로 쓰이는 Class들에게 동일한 메소드를 구현하도록 설정
+* Interface(또는 abstract)를 통해 State Pattern으로 쓰이는 Class들에게 동일한 메소드를 구현하도록 설정   
 Ex)
 ``` 
 public interface IState
