@@ -15,11 +15,24 @@ State_Pattern
 * Interface(또는 abstract)를 통해 State Pattern으로 쓰이는 Class들에게 동일한 메소드를 구현하도록 설정
 Ex)
 ``` 
-public interface StatePattern
+public interface IState
 {
-    void Action();
-} 
+    /// <summary>
+    /// 상태 진입에 수행해야 할 행동
+    /// </summary>
+    void OperateEnter();
+    /// <summary>
+    /// 매 프레임마다 수행해야 할 행동
+    /// </summary>
+    void OperateUpdate();
+    /// <summary>
+    /// 상태에 빠져나올 때 수행해야 할 행동
+    /// </summary>
+    void OperateExit();
+}
+
 ```
+
 * 각 상태 Class에 Action()을 정의한다.
 * **내부에 세부 기능을 정의**하고 **외부에서 Action() 메소드만 호출**하면 상태가 돌아갈 수 있도록 구현
 Ex)
