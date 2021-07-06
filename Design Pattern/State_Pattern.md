@@ -21,10 +21,12 @@ public interface IState
     /// 상태 진입에 수행해야 할 행동
     /// </summary>
     void OperateEnter();
+    
     /// <summary>
     /// 매 프레임마다 수행해야 할 행동
     /// </summary>
     void OperateUpdate();
+    
     /// <summary>
     /// 상태에 빠져나올 때 수행해야 할 행동
     /// </summary>
