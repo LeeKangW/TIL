@@ -21,7 +21,7 @@ public interface StatePattern
 } 
 ```
 * 각 상태 Class에 Action()을 정의한다.
-* **내부에 세부 기능을 정의**하고 **외부에서 Action() 메소드만 호출**하면 상태가 돌아갈 수 있도록 구현
+* **내부에 세부 기능을 정의**하고 **외부에서 Action() 메소드만 호출**하면 상태가 돌아갈 수 있도록 구현   
   * Ex)
     * Jump    (Action() => 점프)
     * Run     (Action() => 달리기)
