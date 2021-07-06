@@ -44,7 +44,7 @@ Language
 [1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
 
 #### Garbage Collection
-[1. Garbage Collection 개념 및 작동 원리](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection.md)
+[1. Garbage Collection 개념 및 작동 원리](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection.md)   
 [2. Generational Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Generational%20%20Garbage%20Collection.md)
 
 
