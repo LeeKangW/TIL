@@ -1,3 +1,7 @@
+* [이것이 C#이다](https://www.hanbit.co.kr/store/books/look.php?p_code=B6673972966) 책을 참고하여 정리하였습니다.
+* 자세한 내용은 책을 구매하여 확인해주세요
+
+
 Generational  Garbage Collection
 ===
 
