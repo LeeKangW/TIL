@@ -13,15 +13,22 @@ Design pattern
 ### observer pattern
 
 ### pushdown automata(푸시다운 오토마타)
-***
 
+
+
+
+***
 mathematics
 ===
 ### Vector  
 [1.Vector란?](/Vector/What-is-a-Vector.md)  
 
-***
 
+
+
+
+
+***
 Language
 ===
 ### C#
@@ -38,7 +45,13 @@ Language
 
 #### Garbage Collection
 [1. Garbage Collection 개념 및 작동 원리](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection.md)
-[2. Generational Garbage Collection]()
+[2. Generational Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Generational%20%20Garbage%20Collection.md)
+
+
+
+
+
+***
 Game Engine
 ===
 ### Unity
@@ -53,6 +66,10 @@ Game Engine
 [Rendering Pipeline](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Rendering%20Pipeline.md)
 
 
+
+
+
+***
 Others
 ===
 ### 메모리 누수
