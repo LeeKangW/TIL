@@ -12,10 +12,6 @@ Design pattern
 
 ### observer pattern
 
-### pushdown automata(푸시다운 오토마타)
-
-
-
 
 ***
 mathematics
