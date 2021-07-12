@@ -37,7 +37,7 @@ Language
 [2. 사용자 지정 날짜 및 시간 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
 
 #### 메모리 관리
-[1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
+[1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)   
 [2. Class 와 Struct 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Class%20%EC%99%80%20Struct%20%EC%B0%A8%EC%9D%B4.md)
 
 #### Garbage Collection
