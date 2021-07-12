@@ -38,6 +38,7 @@ Language
 
 #### 메모리 관리
 [1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)
+[2. Class 와 Struct 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Class%20%EC%99%80%20Struct%20%EC%B0%A8%EC%9D%B4.md)
 
 #### Garbage Collection
 [1. Garbage Collection 개념 및 작동 원리](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection.md)   
