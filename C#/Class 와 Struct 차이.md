@@ -22,7 +22,7 @@
   # 3. Struct는 Class와 다르게 상속이 불가능하다
   
   
-  # Struct를 사용하면 좋은 경우
+  # 4. Struct를 사용하면 좋은 경우
   - 객체 내 멤버 변수가 [primitive type](https://ko.wikipedia.org/wiki/%EC%9B%90%EC%8B%9C_%EC%9E%90%EB%A3%8C%ED%98%95)일 때
   - 객체의 크기가 작음
   - 값이 변하지 않음
