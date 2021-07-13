@@ -45,6 +45,9 @@ Language
 [2. Generational Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Generational%20%20Garbage%20Collection.md)   
 [3. Garbage Collection을 인지한 효율적인 코드 작성법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection%EC%9D%84%20%EC%9D%B8%EC%A7%80%ED%95%9C%20%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%EB%B2%95.md)
 
+#### Delegate 와 Event의 차이
+[Delegate 와 Event 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Event%20%EC%99%80%20Delegate%20%EC%B0%A8%EC%9D%B4.md)
+
 
 
 
