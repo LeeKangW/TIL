@@ -68,7 +68,8 @@ Game Engine
 ### Rendering Pipeline
 [Rendering Pipeline](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Rendering%20Pipeline.md)
 
-
+### 알아 두면 좋은 내용들
+[1. N초 동안 특정 작업 진행하기](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/N%EC%B4%88%20%EB%8F%99%EC%95%88%20%ED%8A%B9%EC%A0%95%20%EC%9E%91%EC%97%85%EC%9D%84%20%ED%95%98%EB%8A%94%20%EA%B8%B0%EB%8A%A5%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95.md)   
 
 
 
