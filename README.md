@@ -9,7 +9,9 @@ Design pattern
 ### Command Pattern
 [Command Pattern(명령 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Command%20Pattern.md)   
 ### State Pattern
-[State Pattern(상태 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/State_Pattern.md)
+[State Pattern(상태 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/State_Pattern.md)   
+### Flyweight Pattern
+[Flyweight Pattern(경량 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/%EA%B2%BD%EB%9F%89%20%ED%8C%A8%ED%84%B4.md)
 ### Component Pattern
 
 ### observer pattern
