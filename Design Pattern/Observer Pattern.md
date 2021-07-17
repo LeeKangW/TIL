@@ -4,6 +4,7 @@ Observer Pattern(관찰자 패턴)
 [게임 프로그래밍 패턴](https://www.hanbit.co.kr/store/books/look.php?p_code=B4342659595) 책으로 공부하면서 정리한 내용입니다.   
 자세한 내용을 원한다면, 책을 구매해서 확인해주세요.
 
+(정리하다 보니 내용이 지저분합니다 T.T)
 
 ***
 ```
