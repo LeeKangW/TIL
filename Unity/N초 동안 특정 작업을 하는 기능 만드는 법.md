@@ -4,7 +4,7 @@ N초 동안 특정 작업을 진행하는 메소드 구현 방법 및 원리
 
 # 1. N초 동안을 어떻게 표현하는가?
 - **Time.deltaTime / N** 을 사용   
-```
+```C#
 float time = Time.deltaTime / N
 ```
 
@@ -15,7 +15,7 @@ float time = Time.deltaTime / N
 - float time = Time.deltaTime/N 에서 **time 이 1이 될 때까지** 반복문을 돌린다.
 
 Ex)
-```
+```C#
 public IEnumerator NTimeWork(float duration)
     {
         float time = 0.0f;
