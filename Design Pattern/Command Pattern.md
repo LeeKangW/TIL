@@ -18,7 +18,7 @@
 - 게임 패드에 A, B, X, Y 버튼이 존재하고 각 버튼에 특정 행동이 연결되어 있다면
 
 명령 패턴을 쓰지 않을 시   
-```
+```C++
 void InputHandler::handleInput()
 {
   if (isPressed(ButtonX)) jump();
@@ -38,7 +38,7 @@ void InputHandler::handleInput()
 <details>
     <summary>Command.h</summary>
 
-```
+```C++
 #pragma once
 class Command
 {
@@ -57,7 +57,7 @@ public:
 <details>
     <summary>InputHandler.h</summary>
 
-```
+```C++
 #pragma once
 #include "Command.h"
 class InputHandler
@@ -82,7 +82,7 @@ private:
 <details>
     <summary>InputHandler.cpp</summary>
 
-```
+```C++
 #include "InputHandler.h"
 
 // 어떤 액터를 파라미터로 넘겨줘야 할지 모르기 때문에 handleInput()에서 명령 객체를 반환
@@ -107,7 +107,7 @@ Command* InputHandler::handleInput()
 <details>
     <summary>FireCommand.h</summary>
 
-```
+```C++
 #pragma once
 #include "Command.h"
 class FireCommand :
@@ -124,7 +124,7 @@ public:
 <details>
     <summary>FireCommand.cpp</summary>
 
-```
+```C++
 #include "FireCommand.h"
   
 void FireCommand::execute(GameActor& actor) 
@@ -145,7 +145,7 @@ void FireCommand::fireGun()
 <details>
     <summary>JumpCommand.h</summary>
 
-```
+```C++
 #pragma once
 #include "Command.h"
   
@@ -165,7 +165,7 @@ public:
 <details>
     <summary>JumCommand.cpp</summary>
 
-```
+```C++
 #include "JumpCommand.h"
 
 void JumpCommand::execute(GameActor& actor)
@@ -189,7 +189,7 @@ void JumpCommand::jump()
 <details>
   <summary> 명령 객체를 받아 플레이어를 대표하는 GameActor 객체에 적용하는 코드</summary>
   
-```
+```C++
   Command* command = inputHandler.handleInput();
   if(command)
   {
@@ -209,7 +209,7 @@ void JumpCommand::jump()
 1. execute() 메소드 정의에서 실행 취소를 하기 위해 실행 전의 정보를 저장한다.
 
 Ex) 특정 unit을 x,y 만큼 이동
-```
+```C++
 virtual void execute()
 {
    // 나중에 취소할 수 있도록 원래 위치를 저장
@@ -222,7 +222,7 @@ virtual void execute()
 2. undo() 메소드 정의에서 1번에 저장한 정보 값을 사용한다.
 
 Ex)
-```
+```C++
 virtual void Undo()
 {
    unit->moveTo(xBefore,yBefore)
