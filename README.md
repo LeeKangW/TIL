@@ -7,7 +7,7 @@ Game Developer Document
 Design pattern
 ===
 ### Command Pattern
-[Command Pattern(명령 패턴)](design_pattern/command_pattern.md)
+[Command Pattern(명령 패턴)](/design_pattern/command_pattern.md)
 ### State Pattern
 [State Pattern(상태 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/State_Pattern.md)
 ### Component Pattern
