@@ -17,7 +17,7 @@
 - add: += (추가)
 - remove: -= (삭제)
 
-```
+```C#
 class Test
 {
   private EventHandler eventWork;
