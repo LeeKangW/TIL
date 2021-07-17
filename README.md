@@ -6,15 +6,16 @@ Game Developer Document
 
 Design pattern
 ===
-### Command Pattern
+### Command Pattern ⭐
 [Command Pattern(명령 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Command%20Pattern.md)   
-### State Pattern
+### State Pattern ⭐
 [State Pattern(상태 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/State_Pattern.md)   
 ### Flyweight Pattern
 [Flyweight Pattern(경량 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Flyweight%20Pattern.md)
 ### Component Pattern
 
-### observer pattern
+### observer pattern ⭐
+[Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Observer%20Pattern.md)   
 
 
 ***
