@@ -1,5 +1,7 @@
 명령 패턴(Command Pattern)
 ===
+[게임 프로그래밍 패턴](https://www.hanbit.co.kr/store/books/look.php?p_code=B4342659595) 책으로 공부하면서 정리한 내용입니다.
+자세한 내용을 원한다면, 책을 구매해서 확인해주세요.
 
 ## 1. 명령 패턴이란?
 - 메소드 호출을 **실체화**한 것
