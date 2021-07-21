@@ -41,7 +41,7 @@ Language
 [1. 표준 날짜 및 시간 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/standard-date-and-time-format-strings)  
 [2. 사용자 지정 날짜 및 시간 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
 
-#### 메모리 관리
+#### 메모리 관리 ⭐
 [1. Strong Reference 와 Weak Reference](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Strong_Reference_%EC%99%80_Weak_Reference.md)   
 [2. Class 와 Struct 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Class%20%EC%99%80%20Struct%20%EC%B0%A8%EC%9D%B4.md)
 
@@ -50,7 +50,7 @@ Language
 [2. Generational Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Generational%20%20Garbage%20Collection.md)   
 [3. Garbage Collection을 인지한 효율적인 코드 작성법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Garbage%20Collection%EC%9D%84%20%EC%9D%B8%EC%A7%80%ED%95%9C%20%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%EB%B2%95.md)
 
-#### Delegate 와 Event의 차이
+#### Delegate 와 Event의 차이 ⭐
 [Delegate 와 Event 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Event%20%EC%99%80%20Delegate%20%EC%B0%A8%EC%9D%B4.md)
 
 
@@ -73,10 +73,10 @@ Game Engine
 ### Rendering Pipeline
 [Rendering Pipeline](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Rendering%20Pipeline.md)
 
-### 최적화
+### 최적화 ⭐
 [1. Batch, Draw Call, SetPass](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/Batch,%20Draw%20Call,%20SetPass.md)
 
-### 알아 두면 좋은 내용들
+### 알아 두면 좋은 내용들 ⭐
 [1. N초 동안 특정 작업을 진행하는 메소드 구현](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/N%EC%B4%88%20%EB%8F%99%EC%95%88%20%ED%8A%B9%EC%A0%95%20%EC%9E%91%EC%97%85%EC%9D%84%20%ED%95%98%EB%8A%94%20%EA%B8%B0%EB%8A%A5%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95.md)   
 
 
