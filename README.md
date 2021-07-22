@@ -6,6 +6,9 @@ Game Developer Document
 
 Design pattern
 ===
+### Singleton Pattern⭐
+[Singleton Pattern(싱글톤 패턴)](/design_pattern/singleton_pattern.md)
+
 ### Command Pattern ⭐
 [Command Pattern(명령 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Command%20Pattern.md)   
 ### State Pattern ⭐
@@ -16,7 +19,6 @@ Design pattern
 
 ### observer pattern ⭐
 [Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Observer%20Pattern.md)   
-
 
 ***
 mathematics
