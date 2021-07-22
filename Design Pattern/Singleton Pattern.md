@@ -25,7 +25,7 @@ Singleton Pattern
 <br>
 
 # 2. 구현 방법
-- 외부에서 객체를 상성할 수 잆도록 **생성자를 Private ** 로 선언 (즉, 객체 생성을 내부에서 관리)
+- 외부에서 객체를 상성할 수 잆도록 **생성자를 Private** 로 선언 (즉, 객체 생성을 내부에서 관리)
 - 외부에서 싱글톤 클래스의 객체에 접근할 수 있도록 GetInstance()메소드를 정의
   - 생성자를 Private로 했기 때문에 GetInstance() 메소드를 접근하기 위해 **Static으로 정의**해야 한다
 
@@ -45,15 +45,76 @@ public class SingleTonObject
     }
 }
 ```
+<br>
+
+# 3. 멀티 스레드 환경
+- 멀티 스레드 환경에선 고려해야 할 사항들이 있다.
+- 두 개 이상의 스레드가 싱글톤 클래스의 인스턴스를 획득하기 위해 GetInstance() 메소드에 접근하면 경합을 벌이는 과정 중<br> **서로 다른 두 개의 인스턴스**가 만들어질 수 있다.
+
+
+
+### 해결 방법 1
+### 인스턴스를 필요할 때 생성하지 않고 처음부터 인스턴스를 만든다.
+
+- 인스턴스를 미리 만들어버리면 인스턴스가 자원을 많이 차지하는 컴포넌트일 경우 **시스템 리소스가 쓸데없이 낭비될 가능성**이 있다
+
+```C#
+public class SingleTonObject
+{
+    private SingleTonObject() { }
+    
+    // 미리 인스턴스를 생성해 둔다
+    private static SingleTonObject instance = new SingleTonObject();
+
+    public static SingleTonObject GetInstance()
+    {
+        return instance;
+    }
+}
+```
+
+### 해결 방법 2
+### GetInstance() 메소드를 동기화시킨다.
+
+- 메서드를 동기화시키면 일반적으로 **성능이 100배 정도 저하**된다고 한다.
+- 동기화 시키면 GetInstnace() 속도가 엄청나게 저하되므로 **속도가 그렇게 중요하지 않다고 판단될 경우에만 사용**
+- **동기화로 인한 오버헤드를 감수**해야 함 
+
+<C# 예시>
+```C#
+public class SingleTonObject
+{
+    private SingleTonObject() { }
+    private static SingleTonObject instance = null;
+
+    public static SingleTonObject GetInstance
+    {
+        get
+        {
+            lock (instance)
+            {
+                if (instance == null)
+                    instance = new SingleTonObject();
+
+                return instance;
+            }
+        }
+    }
+}
+```
 
 <br>
 
-# 3. Singleton Vs Static Class
+# 4. Singleton Vs Static Class
 
 - 두 개의 성능 차이는 무시해도 될 정도로 크게 나지 않음
 
 
 ### 차이점
+- 싱글톤 패턴은 static 인스턴스를 미리 생성해놓는 경우를 제외하고 **객체가 필요한 상황이 되었을 때 인스턴스를 생성**
+
+- 반면, Static 변수를 사용하면 대부분 경우 프로그램이 시작할 때 미리 객체가 생성된다.
+   - **이 객체가 자원을 많이 차지하고 어플리케이션이 종료될 때까지 한번도 쓰지 않는다면 자원을 낭비하는 꼴이 된다.**
 
 |                차이점               	|                               SingleTon                              	|                  Static Class                 	|
 |:-----------------------------------:	|:--------------------------------------------------------------------:	|:---------------------------------------------:	|
@@ -66,14 +127,16 @@ public class SingleTonObject
 
 
 ##### 싱글톤 클래스 쓰는 경우
-- **하나의 인스턴스**만 있어야 하는 경우 ( 로깅, DB커넥션 등 하나의 인스턴스를 통해 처리해야 할 때 )
+- **하나의 인스턴스**만 있어야 하는 경우 (로깅, DB커넥션 등 하나의 인스턴스를 통해 처리해야 할 때)
 - Static 클래스처럼 사용해야 하지만 **인터페이스와 다형성 구현이 필요할 때**
+- 프로그램 실행 중에 **항상 사용하는 것이 아닌 경우** (즉, 사용하지 않는 경우가 있을 때)
 
 ##### Static 클래스를 쓰는 경우
 - 간단하게 Utility 용도로 사용되는 함수와 같이 **Static 만으로 간단히 해결할 수 있는 것들**
 - 싱글톤이 상태를 가지지 않고 **global access를 제공할 때**
 
 
-<참고 자료>
+<참고 자료>   
 [os94 님의 네이버 블로그](https://m.blog.naver.com/ss1511/221586516299)   
 [bradkwon.github.io - 싱글톤 패턴 VS Static 클래스 in C#](https://bradkwon.github.io/tech/2019/03/07/singleton-vs-static-kr/)
+
