@@ -21,13 +21,15 @@ Design pattern
 [Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Observer%20Pattern.md)   
 
 ***
+AI
+===
+[1. Behavior Tree]
+
+***
 mathematics
 ===
 ### Vector  
 [1.Vector란?](/Vector/What-is-a-Vector.md)  
-
-
-
 
 
 
