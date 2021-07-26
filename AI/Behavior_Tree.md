@@ -30,8 +30,60 @@ Behavior Tree
   
 </details>
 
+
+
 <details>
-  <summary> Task 설명 </summary>
+  <summary> Task 설명(이론) </summary>
+
+### 태스크 (Task)
+- BT의 Leaf 노드로 정의한 Task를 실행
+- Task 노드는 자식을 보유하지 않음
+  
+### Composite Node
+- **특정 작업을 실행하지 않는 대신** 자식 노드를 보유한 노드
+- 셀렉터(Selector), 시퀀스(Sequence), 심플 페러렐(Simple parallel) 이 있음
+
+#### 셀렉터(Selector)
+- 자식 노드 중 하나를 실행하기 위한 노드
+- 복수의 선택 중 하나의 행동을 실행해야 할 때 사용
+- 자식 노드 작동 순서: 왼쪽 -> 오른쪽 순서로 깊이 우선 탐색 방식으로 순회
+- 자식 노드가 success를 반환할 때까지 순회
+- 모든 자식 노드가 failure를 반환하면 failure를 반환하고 종료
+
+  
+#### 시퀀스(Sequence)
+- 자식 노드를 순서대로 진행하는 노드
+- 연속적인 행동의 구현이 필요할 때 사용
+- 자식 노드 작동 순서: 왼쪽 -> 오른쪽 순서로 깊이 우선 탐색 방식으로 순회
+- **자식 노드가 failure를 반환할 때까지 순회**
+- 자식 노드 중 하나라도 failure를 반환하면 sequence는 종료
+- 모든 자식 노드가 failure를 반환하지 않으면, 모든 자식 노드를 순회하고 sequence 종료
+
+![image](https://user-images.githubusercontent.com/48194683/126947179-38a7cf07-be15-4d29-85c4-95d760869167.png)
+
+
+### Decorator
+- 노드를 실행할 조건을 정의한 노드
+- Composite 혹은 Task 노드에 붙여 해당 노드를 실행할 건지 결정
+
+![image](https://user-images.githubusercontent.com/48194683/126948261-a7fa5f6d-853d-41dd-ba39-2aab78b93b64.png)
+
+  
+<Node의 리턴 값>   
+|   	| Node 리턴 값 	|                설명                	|
+|:-:	|:------------:	|:----------------------------------:	|
+| 1 	|    Success   	|                완료                	|
+| 2 	|    Failure   	|                실패                	|
+| 3 	|    Running   	|            현재 진행 중            	|
+| 4 	|    Invalid   	| 방문한 노드가 아닐 때 최초 상태 값 	|
+| 5 	|     Error    	|             오류가 발생            	|
+  
+</details>
+
+
+
+<details>
+  <summary> Task 설명(코드 구현 느낌으로 설명) </summary>
 
 <br/>
 
@@ -103,4 +155,5 @@ Composite Task는 우리말로 복합 태스크이다.
 - Probability, TimeOut, CheckEvnet 등에 사용
   
 </details>
+
 
