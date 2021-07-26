@@ -41,6 +41,6 @@ Action Task는 **실제 행동을 표현하는 단말 노드** 이고, 이것은
 일반적으로
 - Action.OnStart()
 - Action.OnUpdate()
-- Action.OnEnd()
+- Action.OnEnd()   
 와 같은 메소드를 가지는데, **Action.OnUpdate()에서 true나 false를 반환**하면 그 Action의 작업은 끝이 난다.
 
