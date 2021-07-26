@@ -23,7 +23,8 @@ Design pattern
 ***
 AI
 ===
-[1. Behavior Tree](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/Behavior%20Tree.md)
+[1. FSM(Finite State Machine)]()
+[2. Behavior Tree](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/Behavior%20Tree.md)
 
 ***
 mathematics
