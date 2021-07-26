@@ -23,9 +23,9 @@ Design pattern
 ***
 AI
 ===
-[1. FSM(Finite State Machine)]()
-[2. HFSM](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/HFSM(Hierarchical%20Finite%20State%20Machine).md)
-[2. Behavior Tree](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/Behavior%20Tree.md)
+[1. FSM(Finite State Machine)](AI/FSM.md)   
+[2. HFSM](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/HFSM(Hierarchical%20Finite%20State%20Machine).md)   
+[2. Behavior Tree](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/Behavior%20Tree.md)   
 
 ***
 mathematics
