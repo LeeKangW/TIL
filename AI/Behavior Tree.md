@@ -2,7 +2,7 @@ Behavior Tree
 ===
 <참고 자료>   
 [Line Engineering - Behavior Tree를 알아봅시다.](https://engineering.linecorp.com/ko/blog/behavior-tree/)   
-[병아리 개발자의 삐약삐약 - 0708 Game AI Behaviour Tree](https://bin-repository.tistory.com/23)
+[병아리 개발자의 삐약삐약 - 0708 Game AI Behaviour Tree](https://bin-repository.tistory.com/23)   
 [그냥 그런 블로그 - Behavior Tree 개념 및 동작](https://lifeisforu.tistory.com/327)
 
 <details>
@@ -34,6 +34,7 @@ Behavior Tree
   <summary> Task 설명 </summary>
 
 <br/>
+
 [그냥 그런 블로그 - Behavior Tree 개념 및 동작](https://lifeisforu.tistory.com/327)<br/>
 의 내용을 정리했습니다. <br/>
 자세한 내용은 위 블로그에서 확인해주세요.<br/>
