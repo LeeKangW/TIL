@@ -5,6 +5,9 @@ Behavior Tree
 [병아리 개발자의 삐약삐약 - 0708 Game AI Behaviour Tree](https://bin-repository.tistory.com/23)
 [그냥 그런 블로그 - Behavior Tree 개념 및 동작](https://lifeisforu.tistory.com/327)
 
+<details>
+  <summary>Behavior Tree란?</summary>
+  
 # 1. Behavior Tree란?
 [자세한 내용은 Wikipedia](https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_robotics_and_control))
 
@@ -23,8 +26,19 @@ Behavior Tree
   - Failure: 실행 실패
   - Running(Continue): 실행 중. 다음 번에 running을 반환한 노드가 다시 호출
 - 모든 노드에 평가 기능 여부를 나타내는 active/inactive 상태를 설정 가능
+  
+  
+</details>
 
+<details>
+  <summary> Task 설명 </summary>
 
+<br/>
+[그냥 그런 블로그 - Behavior Tree 개념 및 동작](https://lifeisforu.tistory.com/327)<br/>
+의 내용을 정리했습니다. <br/>
+자세한 내용은 위 블로그에서 확인해주세요.<br/>
+<br/>
+  
 # 2. TASK
 - BT는 태스크(TASK) 집합으로 구성
 - BT는 모든 것을 노드(Node)로 표현
@@ -35,7 +49,7 @@ Behavior Tree
   - Condition
   - Action
 
-### Action
+### Action Task
 Action Task는 **실제 행동을 표현하는 단말 노드** 이고, 이것은 항상 **True** 나 **False**를 반환하게 되어 있다.
 
 일반적으로
@@ -44,4 +58,48 @@ Action Task는 **실제 행동을 표현하는 단말 노드** 이고, 이것은
 - Action.OnEnd()   
 
 와 같은 메소드를 가지는데, **Action.OnUpdate()에서 true나 false를 반환**하면 그 Action의 작업은 끝이 난다.
+
+<스택에서 작동법>
+- 처음 올라갈 때 OnStart() 호출
+- true나 false를 반환하지 않으면 계속해서 OnUpdate() 호출
+- true나 false를 반환하면, 스택에서 빠지면서 OnEnd() 호출
+
+
+### Composite Task
+Composite Task는 우리말로 복합 태스크이다.   
+이것은 말 그대로 **여러 개의 자식으로 구성된 Task**이다.   
+자주 사용되는 Composite으로는 Select, Sequence 등이 있고, 이러한 Composite의 핵심 용도는 **node의 flow를 제어하는 것**이다.   
+
+기본적으로 node의 실행 순서은
+- 위에서 아래로
+- 왼쪽에서 오른쪽
+
+이다.
+
+#### Select Composite
+- 자식 노드가 **true를 반환**할 때까지 자식 노드를 실행
+- 말 그대로 하나를 선택해서 실행
+
+#### Sequence Composite
+- 자식 노드가 **false를 반환**할 때까지 자식 노드를 실행
+- 말 그대로 순차적 실행
+
+#### Conditional Aborts
+- 한국말로 조건부 취소
+- 어떤 구현에서는 Reactive Evaluation 이라 한다.
+- BT 말단 노드에 존재하는 Action이 true 나 false를 반환하지 않아 계속 OnUpdate()를 호출할 때 외부에서 강제적으로 그 Action을 종료하고 싶을 때 사용
+
+<구성>
+- Self: 자신의 하위에 있는 Task를 취소
+- Lower Priority: 자신의 오른쪽에 있는 이웃 노드의 흐름을 취소
+- Both: Self + Lower Priority
+
+### Decoration Task
+- **조건**을 의미
+- **하나의 자식**만을 가질 수 있음
+  - 조건 만족: 자식을 실행
+  - 조건 만족하지 못함: false를 반환
+- Probability, TimeOut, CheckEvnet 등에 사용
+  
+</details>
 
