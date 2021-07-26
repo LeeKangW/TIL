@@ -66,6 +66,8 @@ Language
 Game Engine
 ===
 ### Unity
+[Unity Blog 링크](https://blog.unity.com/kr) -> 각종 Unity 정보를 얻을 수 있음
+
 #### 연산
 [1. Vector 와 Quaternion 연산](/Unity/Vector-와-Quaternion의-연산.md) 
 
