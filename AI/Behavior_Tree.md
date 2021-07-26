@@ -75,8 +75,6 @@ Behavior Tree
 | 1 	|    Success   	|                완료                	|
 | 2 	|    Failure   	|                실패                	|
 | 3 	|    Running   	|            현재 진행 중            	|
-| 4 	|    Invalid   	| 방문한 노드가 아닐 때 최초 상태 값 	|
-| 5 	|     Error    	|             오류가 발생            	|
   
 </details>
 
