@@ -1,5 +1,7 @@
 HFSM(Hierarchical Finite State Machine)
 ===
+<참고 자료>   
+[늘상의 하루 - FSM - HFSM - BT 구조](https://neulsang-day.tistory.com/30)   
 
 # 1. HFSM
 - 계층적 유한 상태 기계
