@@ -23,7 +23,7 @@ Design pattern
 ***
 AI
 ===
-[1. Behavior Tree]
+[1. Behavior Tree](https://github.com/LeeKangW/Game_Developer_Document/blob/main/AI/Behavior%20Tree.md)
 
 ***
 mathematics
