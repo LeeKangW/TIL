@@ -6,19 +6,26 @@ Game Developer Document
 
 Design pattern
 ===
+**[게임 프로그래밍 패턴](https://www.hanbit.co.kr/store/books/look.php?p_code=B4342659595)을 보고 정리한 내용입니다.**  
+**책 내용을 정리한 것이므로 Private repository 에 저장되어 있습니다.**   
 ### Singleton Pattern⭐
-[Singleton Pattern(싱글톤 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Singleton%20Pattern.md)
+[Singleton Pattern(싱글톤 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Singleton%20Pattern.md)
 
 ### Command Pattern ⭐
-[Command Pattern(명령 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Command%20Pattern.md)   
+[Command Pattern(명령 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Command%20Pattern.md)   
+
 ### State Pattern ⭐
-[State Pattern(상태 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/State_Pattern.md)   
+[State Pattern(상태 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/State%20Pattern.md)   
+
 ### Flyweight Pattern
-[Flyweight Pattern(경량 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Flyweight%20Pattern.md)
+[Flyweight Pattern(경량 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Flyweight%20Pattern.md)
+
 ### Component Pattern
 
+
 ### observer pattern ⭐
-[Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Design%20Pattern/Observer%20Pattern.md)   
+[Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Observer%20Pattern.md)   
+
 
 ***
 AI
