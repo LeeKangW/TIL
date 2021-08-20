@@ -109,7 +109,8 @@ Shader
 ### Unity Shader
 [1. Unity Shader 작성 요령](https://github.com/LeeKangW/Unity_Shader_Project/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/1.%20%EC%9C%A0%EB%8B%88%ED%8B%B0%20%EC%89%90%EC%9D%B4%EB%8D%94%EC%9D%98%20%EC%9E%91%EC%84%B1%20%EC%9A%94%EB%A0%B9.md)   
 [2. surface Shader 적용 및 코드 작성법 설명](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/2.%20surface%20Shader%20%20%EC%A0%81%EC%9A%A9%20%EB%B0%8F%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%EB%B2%95%20%EC%84%A4%EB%AA%85.md)   
-
+[3. 색상 표현하기]
+(https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/3.%20%EC%83%89%EC%83%81%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.md)  
 
 ***
 Others
