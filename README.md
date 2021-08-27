@@ -6,8 +6,14 @@ Game Developer Document
 
 Design pattern
 ===
+<details>
+  <summary> Contents </summary>
+  
+<br>  
+ 
 **[게임 프로그래밍 패턴](https://www.hanbit.co.kr/store/books/look.php?p_code=B4342659595)을 보고 정리한 내용입니다.**  
 **책 내용을 정리한 것이므로 Private repository 에 저장되어 있습니다.**   
+  
 ### Singleton Pattern⭐
 [Singleton Pattern(싱글톤 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Singleton%20Pattern.md)
 
@@ -22,30 +28,41 @@ Design pattern
 
 ### Component Pattern
 
-
 ### observer pattern ⭐
 [Observer Pattern(관찰자 패턴)](https://github.com/LeeKangW/Private_Game-Developer_Document/blob/main/Desgin%20Pattern/Observer%20Pattern.md)   
 
+</details>
 
-***
+
 AI
 ===
+<details>
+  <summary> Contents </summary>
+    
+<br>
+
 [1. FSM(Finite State Machine)](AI/FSM.md)   
 [2. HFSM](AI/HFSM.md)   
-[2. Behavior Tree](AI/Behavior_Tree.md)   
+[3. Behavior Tree](AI/Behavior_Tree.md)   
 
-***
+</details>
+
 mathematics
 ===
+<details>
+  <summary> Contents </summary>
+
 ### Vector  
 [1.Vector란?](/Vector/What-is-a-Vector.md)  
+  
+</details>
 
-
-
-***
 Language
 ===
 ### C#
+<details>
+  <summary> Contents </summary>
+
 #### 숫자 서식
 [1. 표준 숫자 서식 문자열](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/standard-numeric-format-strings)  
 [2. 사용자 지정 숫자 서식 문자열](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A7%80%EC%A0%95-%EC%88%AB%EC%9E%90-%EC%84%9C%EC%8B%9D.md)
@@ -66,11 +83,16 @@ Language
 #### Delegate 와 Event의 차이 ⭐
 [Delegate 와 Event 차이](https://github.com/LeeKangW/Game_Developer_Document/blob/main/C%23/Event%20%EC%99%80%20Delegate%20%EC%B0%A8%EC%9D%B4.md)
 
+</details>
 
-***
 Game Engine
 ===
-## Unity
+### Unity
+<details>
+  <summary> Contents </summary>
+
+<br>
+
 [Unity Blog 링크](https://blog.unity.com/kr) -> 각종 Unity 정보를 얻을 수 있음
 
 ### Unity에서 지원하는 기능
@@ -95,14 +117,27 @@ Game Engine
 ### 알아 두면 좋은 내용들 ⭐
 [1. N초 동안 특정 작업을 진행하는 메소드 구현](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/N%EC%B4%88%20%EB%8F%99%EC%95%88%20%ED%8A%B9%EC%A0%95%20%EC%9E%91%EC%97%85%EC%9D%84%20%ED%95%98%EB%8A%94%20%EA%B8%B0%EB%8A%A5%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95.md)   
 
+</details>
 
-## Unreal Engine4
+
+### Unreal Engine
+
+<details>
+  <summary> Contents </summary>
+
+### UE4
 [Unity 개발자를 위한 언리얼 엔진 4](https://docs.unrealengine.com/4.27/ko/Basics/UnrealEngineForUnityDevs/)  
 
 [1. Level Blueprint](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/1.%20Level%20Blueprint.md)  
-***
+  
+</details>
+
 Shader
 ===
+
+<details>
+  <summary> Contents </summary>
+
 ### Shader의 개념 
 **[유니티 쉐이더 스타트업](https://vielbooks.com/235)을 보고 정리한 내용입니다.**  
 **책 내용을 정리한 것이므로 Private repository 에 저장되어 있습니다.**   
@@ -117,9 +152,14 @@ Shader
 [3. 색상 표현하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/3.%20%EC%83%89%EC%83%81%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.md)  
 [4. Surface Shader를 이용한 텍스쳐 제어](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/4.%20Surface%20Shader%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%ED%85%8D%EC%8A%A4%EC%B3%90%20%EC%A0%9C%EC%96%B4.md)  
 
+</details>
 
-***
 Others
 ===
+<details>
+  <summary> Contents </summary>
+  
 ### 메모리 누수
 [메모리 누수 방지 방법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unity/%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EB%88%84%EC%88%98%20%EB%B0%A9%EC%A7%80%EB%B2%95.md)
+  
+</details>
