@@ -153,11 +153,16 @@ Shader
 [2. surface Shader 적용 및 코드 작성법 설명](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/2.%20surface%20Shader%20%20%EC%A0%81%EC%9A%A9%20%EB%B0%8F%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%EB%B2%95%20%EC%84%A4%EB%AA%85.md)   
 [3. 색상 표현하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/3.%20%EC%83%89%EC%83%81%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.md)  
 [4. Surface Shader를 이용한 텍스쳐 제어](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/4.%20Surface%20Shader%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%ED%85%8D%EC%8A%A4%EC%B3%90%20%EC%A0%9C%EC%96%B4.md)  
+<br>
 [5. UV 이용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/5-0.%20UV%20%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0.md)  
 [5-1. UV를 이용해 불 이펙트 만들어보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/5-1.%20UV%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%B4%20%EB%B6%88%20%EC%9D%B4%ED%8E%99%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)  
+<br>
 [6. Vertex 컬러 이용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/6-0.%20Vertex%20%EC%BB%AC%EB%9F%AC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0.md)  
 [6-1. Vertex Color를 이용해 마스킹 기능을 이용해보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/6-1.%20Vertex%20Color%EB%A5%BC%20%EB%A7%88%EC%8A%A4%ED%82%B9%20%EA%B8%B0%EB%8A%A5%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0.md)  
-
+<br>
+SurfaceOutputStandard 사용하기  
+[7-1. Metallic 과 Smoothness](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7.%20Metallic%20%EA%B3%BC%20Smoothness.md)  
+  
   
 </details>
 
