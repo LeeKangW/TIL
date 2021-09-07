@@ -161,8 +161,8 @@ Shader
 [6-1. Vertex Color를 이용해 마스킹 기능을 이용해보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/6-1.%20Vertex%20Color%EB%A5%BC%20%EB%A7%88%EC%8A%A4%ED%82%B9%20%EA%B8%B0%EB%8A%A5%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0.md)  
 <br>
 SurfaceOutputStandard 사용하기  
-[7-1. Metallic 과 Smoothness](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7.%20Metallic%20%EA%B3%BC%20Smoothness.md)  
-  
+[7-1. Metallic 과 Smoothness](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-1.%20Metallic%20%EA%B3%BC%20Smoothness.md)  
+[7-2. NormalMap 적용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-2.%20NormalMap.md)  
   
 </details>
 
