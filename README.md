@@ -164,6 +164,8 @@ SurfaceOutputStandard 사용하기
 [7-1. Metallic 과 Smoothness](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-1.%20Metallic%20%EA%B3%BC%20Smoothness.md)  
 [7-2. NormalMap 적용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-2.%20NormalMap.md)  
 [7-3. Occlusion(오클루젼)](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-3.%20Occlusion(%EC%98%A4%ED%81%B4%EB%A3%A8%EC%A0%BC).md)  
+[7-4. 6번 내용 업그레이드 시켜 보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-4.%206%EB%B2%88%20%EB%82%B4%EC%9A%A9%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%EC%8B%9C%EC%BC%9C%20%EB%B3%B4%EA%B8%B0.md)  
+
 </details>
 
 Others
