@@ -131,6 +131,9 @@ Game Engine
 [1. Level Blueprint](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/1.%20Level%20Blueprint.md)  
 [2. Class 구조 (Object, Actor, Pawn, Character)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/2.%20UE4%20Class%20%EA%B5%AC%EC%A1%B0.md)    
 [3. 리플렉션(Reflection)](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/3.%20%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98(Reflection).md)  
+[3-1. 언리얼 엔진의 Garbage Collection](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/3-1.%20%EC%96%B8%EB%A6%AC%EC%96%BC%20%EC%97%94%EC%A7%84%EC%9D%98%20Garbage%20Collection.md)  
+  
+
 </details>
 
 Shader
