@@ -158,7 +158,7 @@ Shader
 [2. UV란 무엇인가](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/UV%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.md)  
 <br>
 
-### Unity Shader
+## Unity Shader
 [1. Unity Shader 작성 요령](https://github.com/LeeKangW/Unity_Shader_Project/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/1.%20%EC%9C%A0%EB%8B%88%ED%8B%B0%20%EC%89%90%EC%9D%B4%EB%8D%94%EC%9D%98%20%EC%9E%91%EC%84%B1%20%EC%9A%94%EB%A0%B9.md)   
 [2. surface Shader 적용 및 코드 작성법 설명](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/2.%20surface%20Shader%20%20%EC%A0%81%EC%9A%A9%20%EB%B0%8F%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%EB%B2%95%20%EC%84%A4%EB%AA%85.md)   
 [3. 색상 표현하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/3.%20%EC%83%89%EC%83%81%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.md)  
@@ -170,11 +170,15 @@ Shader
 [6. Vertex 컬러 이용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/6-0.%20Vertex%20%EC%BB%AC%EB%9F%AC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0.md)  
 [6-1. Vertex Color를 이용해 마스킹 기능을 이용해보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/6-1.%20Vertex%20Color%EB%A5%BC%20%EB%A7%88%EC%8A%A4%ED%82%B9%20%EA%B8%B0%EB%8A%A5%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0.md)  
 <br>
-SurfaceOutputStandard 사용하기  
+### SurfaceOutputStandard 사용하기  
 [7-1. Metallic 과 Smoothness](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-1.%20Metallic%20%EA%B3%BC%20Smoothness.md)  
 [7-2. NormalMap 적용하기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-2.%20NormalMap.md)  
 [7-3. Occlusion(오클루젼)](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-3.%20Occlusion(%EC%98%A4%ED%81%B4%EB%A3%A8%EC%A0%BC).md)  
 [7-4. 6번 내용 업그레이드 시켜 보기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/7-4.%206%EB%B2%88%20%EB%82%B4%EC%9A%A9%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%EC%8B%9C%EC%BC%9C%20%EB%B3%B4%EA%B8%B0.md)  
+  
+### 유니티에 내장된 라이팅 구조인 `Lambert(램버트)` 와 `Blinn Phong(블린 퐁)` 사용하기
+[8. 유니티에 내장된 라이팅 구조 설명](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/8.%20%EC%9C%A0%EB%8B%88%ED%8B%B0%EC%97%90%20%EB%82%B4%EC%9E%A5%EB%90%9C%20%EB%9D%BC%EC%9D%B4%ED%8C%85%20%EA%B5%AC%EC%A1%B0.md)  
+
 
 </details>
 
