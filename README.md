@@ -156,6 +156,7 @@ Shader
 [0. 쉐이더란 무엇인가?](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/0.%20%EC%89%90%EC%9D%B4%EB%8D%94%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.md)<br/>
 [1. 렌더링 파이프라인](https://github.com/LeeKangW/Unity_Shader_Project/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/0-1.%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8.md)  
 [2. UV란 무엇인가](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/UV%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.md)  
+[3. 디지털 라이팅의 이론](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/3.%20%EB%94%94%EC%A7%80%ED%84%B8%20%EB%9D%BC%EC%9D%B4%ED%8C%85%EC%9D%98%20%EC%9D%B4%EB%A1%A0.md)  
 <br>
 
 ## Unity Shader
