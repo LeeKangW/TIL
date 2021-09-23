@@ -181,7 +181,10 @@ Shader
 [8. 유니티에 내장된 라이팅 구조 설명](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/8.%20%EC%9C%A0%EB%8B%88%ED%8B%B0%EC%97%90%20%EB%82%B4%EC%9E%A5%EB%90%9C%20%EB%9D%BC%EC%9D%B4%ED%8C%85%20%EA%B5%AC%EC%A1%B0.md)  
 [8-1. Lambert(램버트)라이팅 만들기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/8-1.%20Lambert(%EB%9E%A8%EB%B2%84%ED%8A%B8)%EB%9D%BC%EC%9D%B4%ED%8C%85%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)  
 [8-2. Blinn-Phong(블린-퐁) 라이팅 만들기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/8-2.%20Blinn-Phong(%EB%B8%94%EB%A6%B0-%ED%90%81)%20%EB%9D%BC%EC%9D%B4%ED%8C%85%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)  
-
+<br>
+  
+### 커스텀 라이트 만들기
+[9. Lambert 라이트](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/9.%20Lambert%20%EB%9D%BC%EC%9D%B4%ED%8A%B8.md)  
 
 </details>
 
