@@ -142,6 +142,7 @@ Game Engine
   
 ### Collision
 [5. Collision 사용법](https://docs.unrealengine.com/4.26/ko/InteractiveExperiences/Physics/Collision/)  
+[6. Sweeping](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/6.%20Sweeping.md)  
 </details>
 
 Shader
