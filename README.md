@@ -189,7 +189,7 @@ Shader
 <br>
   
 ### 커스텀 라이트 만들기
-[9. 커스텀 라이트 기본형 만들기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/9.%20Lambert%20%EB%9D%BC%EC%9D%B4%ED%8A%B8.md)  
+[9. 커스텀 라이트 기본형 만들기](https://github.com/LeeKangW/Unity_Shader_Study/blob/main/%EC%B1%85%20%EC%A0%95%EB%A6%AC/Unity/9.%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%EB%9D%BC%EC%9D%B4%ED%8A%B8%20%EA%B8%B0%EB%B3%B8%ED%98%95%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)   
 
 </details>
 
