@@ -148,6 +148,9 @@ Game Engine
 [7. 필요없는 C++ 파일 삭제하는 방법](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/7.%20%ED%95%84%EC%9A%94%20%EC%97%86%EB%8A%94%20C%2B%2B%20%ED%81%B4%EB%9E%98%EC%8A%A4%20%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0.md)  
 </details>
 
+### Pawn
+[8. Pawn 이란?](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/8.%20Pawn%20%EC%9D%B4%EB%9E%80%3F.md)  
+
 Shader
 ===
 
