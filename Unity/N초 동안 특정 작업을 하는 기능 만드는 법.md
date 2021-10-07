@@ -17,19 +17,18 @@ float time = Time.deltaTime / N
 Ex)
 ```C#
 public IEnumerator NTimeWork(float duration)
+{
+    float time = 0.0f;
+
+    while (time < 1.0f)
     {
-        float time = 0.0f;
+        time += Time.deltaTime / duration;
 
-        while (time < 1.0f)
-        {
-            time += Time.deltaTime / duration;
-            
-            // ======= 하고자 하는 작업을 구현 =======
-            
-            
-            
-            yield return CoroutineStarter.WaitFor0ms;
-        }
+        // ======= 하고자 하는 작업을 구현 =======
+
+
+
+        yield return CoroutineStarter.WaitFor0ms;
     }
-
+}
 ```
