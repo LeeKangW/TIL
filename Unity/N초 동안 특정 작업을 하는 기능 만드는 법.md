@@ -1,21 +1,11 @@
-N초 동안 특정 작업을 진행하는 메소드 구현 방법 및 원리
-===
+>게임 개발을 하다보면 N초 동안 특정 작업을 진행해야 하는 기능을 구현할 때가 많은데  
+>이럴 때, 어떻게 구현할 수 있는지 알아보자
+>
+> 설명은 Unity로 하였습니다.
 
-
-# 1. N초 동안을 어떻게 표현하는가?
-- **Time.deltaTime / N** 을 사용   
-```C#
-float time = Time.deltaTime / N
-```
-
-# 2. 그럼 어떻게 사용?
-- Coroutine을 사용
-  -  N초 동안 이 작업이 진행되어야 함으로 코루틴을 써서 **비동기인 것처럼** 돌아가야 한다.
-
-- float time = Time.deltaTime/N 에서 **time 이 1이 될 때까지** 반복문을 돌린다.
-
-Ex)
-```C#
+# 사용법
+- `Time.deltaTime / N(작업을 진행하고 싶은 시간(초))` 을 사용
+```cs
 public IEnumerator NTimeWork(float duration)
 {
     float time = 0.0f;
@@ -26,9 +16,62 @@ public IEnumerator NTimeWork(float duration)
 
         // ======= 하고자 하는 작업을 구현 =======
 
-
-
-        yield return CoroutineStarter.WaitFor0ms;
+	// =====================================
+        yield return null;
     }
 }
 ```
+
+**yield return null** 을 통해 `update()`함수가 호출된 이후에 진행이 되도록 설정한다.
+>참고로 [Update](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html) 문은 매 프레임마다 호출된다.
+
+추가로, 아래 캡쳐 이미지를 보면 update 함수 이후에 호출됨을 확인할 수 있다.
+
+![](https://images.velog.io/images/night/post/2be13773-7c19-4d04-b454-c4d00ff30b20/image.png)
+
+[유니티 공식 문서 - Order of execution for event functions](https://docs.unity3d.com/Manual/ExecutionOrder.html)
+
+***
+
+## 원리
+>TIme.deltaTime은 "**지난 프레임이 완료되는 데 까지 걸린 시간**"을 의미한다.(단위: 초)
+
+예시를 통해 원리를 이해해보자.  
+1초에 60프레임을 처리한다고 가정
+
+```cs
+time += Time.deltaTime 
+```
+일 때로 생각해보면,  
+`Time.deltaTime`은 `1 / 60` 을 의미하고,  
+`time >= 1.0f` 가 될 때는 `time += Time.deltaTime`을 60번 이상 실행하면 된다는 것을 알 수 있다.  
+( `1 / 60` 을 `60`번 더하면 `60 / 60` 즉 `1`이 되기 때문 )  
+
+
+그리고,  
+위에서 확인했던 대로  
+**yield return null**은 Update() 함수가 처리된 이후에 호출됨을 알 수 있는데  
+
+Update()함수는 **매 프레임마다 호출되기 때문에 1초가 될 때 총 60번 호출이 됨을 알 수 있다.**  
+즉,  
+```cs
+while (time < 1.0f)
+{
+     time += Time.deltaTime / duration;
+
+     // ======= 하고자 하는 작업을 구현 =======
+	
+    // =====================================
+     yield return null;
+}
+```
+코드 또한 **60번 호출이 될 것임을 알 수 있고,**  
+**60번 호출 이후에(즉 1초가 될 때) while문을 빠져나간다는 것을 알 수 있다.**  
+
+여기서 `N(=duration)`이 `10`이라고 가정하면  
+`Time.deltaTime / duration`은 `1 / (60 * 10) == 1 / 600` 이 되고,  
+`time >=1f`가 되기 위해선 600번 이상 호출되어야 한다.
+
+즉,  
+1 프레임이 600번 처리되기 위해선 10초가 걸리게 되고,   
+이에 따라 10초 이후에 while문을 빠져나간다는 것을 확인할 수 있다.
