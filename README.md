@@ -163,6 +163,8 @@ Game Engine
 ### Socket
 [15. Skeletal Mesh Socket을 이용한 무기 장착](https://github.com/LeeKangW/TIL/blob/main/Unreal%20Engine/15.%20Skeletal%20Mesh%20Socket%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EB%AC%B4%EA%B8%B0%20%EC%9E%A5%EC%B0%A9.md)  
  
+### Weapon Trail
+[16. Weapon Trail](https://github.com/LeeKangW/TIL/blob/main/Unreal%20Engine/16.%20Weapon%20Trail.md)  
 </details>
 
 Shader
