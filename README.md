@@ -4,6 +4,13 @@ TIL(Today I Learned)
 * 개발 및 공부를 하면서 배운 내용들을 정리하였습니다!
 * 오류가 있다면 언제든지 말해주세요.
 
+블로그 정리(백업)
+===
+```
+아래 내용들 중 블로그에 올라가 있던 것들이 있어 겹치는 내용들이 다수 있습니다.
+```
+[블로그 정리 백업 폴더](https://github.com/LeeKangW/TIL/tree/main/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%ED%8F%AC%EC%8A%A4%ED%8A%B8)
+
 Design pattern
 ===
 <details>
