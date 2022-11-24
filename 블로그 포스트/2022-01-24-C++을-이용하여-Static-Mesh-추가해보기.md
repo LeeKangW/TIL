@@ -1,0 +1,76 @@
+---
+title: C++을 이용하여 Static Mesh 추가해보기
+date: 2022-01-24 22:52:00 +0000
+categories: [UE4(TIL), Actor]
+tags: [ue4]     # TAG names should always be lowercase
+---
+
+C++로 액터에 Static Mesh 추가하기
+===
+
+## BluePrint를 사용해 Static Mesh 추가하기
+
+- Static Mesh Components 는 새로운 개체이므로 모든 개체와 마찬가지로 `U` 가 붙는다.
+- 기본적인 타입(Ex. int, boolean, float )을 쓰지 않고 **포인터를 사용한 이유는 훨씬 효율적이고, 실제 프로그래밍에 필요(사용)하기 때문이다.**
+
+```cpp
+class RPGSTUDY_API ATESTActor : public AActor
+{
+	GENERATED_BODY()
+	
+public:	
+	// Sets default values for this actor's properties
+	ATESTActor();
+  
+  	// Static Mesh를 추가했다.
+  	UPROPERTY(VisibleAnywhere,Category ="ActorMeshComponents")
+	UStaticMeshComponent* staticMesh;
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+};
+```
+
+- 생성자에 추가한 `staticMesh` 변수에 새로운 정적 `Mesh` 구성 요소를 생성한다.
+  
+```cpp
+ATESTActor::ATESTActor()
+{
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	staticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CustomStaticMesh"));
+}
+```
+
+- 컴파일을 통해 수정된 C++ 코드를 적용할 수 있다.
+
+
+## 추가된 StaticMesh를 BluePrint에서 조작하기
+
+- 위에서 추가한 `staticMesh` 가 생성된 걸 볼 수 있다.  
+![image](https://user-images.githubusercontent.com/48194683/133039938-392616df-f565-4186-8a1f-8ba858c64e32.png)  
+
+- `Details` 에서 `Static Mesh`를 추가할 수 있는 곳을 확인할 수 있다.  
+![image](https://user-images.githubusercontent.com/48194683/133040082-4401c093-72ec-4939-9df3-2ff6996f70db.png)
+
+- 가지고 있는 `Static Mesh`를 설정할 수 있다.  
+![image](https://user-images.githubusercontent.com/48194683/133040580-fed63d61-c016-48bf-ac40-bd3358fbe2c8.png)
+
+- `Cone` 모양으로 `Static Mesh`를 설정 후, 레벨에 배치하면 `Cone` 모양이 배치됨을 알 수 있다.   
+![image](https://user-images.githubusercontent.com/48194683/133040772-fc598132-9770-42c3-9b81-99a0c9f1f0e3.png)
+
+
+- 만든 `BluePrint`를 통해 여러 개의 `Cone`을 만들 수 있는데, 이런 경우 각각의 `Cone`이 `BluePrint`의 인스턴스가 된다.  
+
+씬에 여러 개를 추가했고  
+![image](https://user-images.githubusercontent.com/48194683/133040948-0d805ed3-74f6-4955-b9c6-4963f903b8aa.png)  
+
+`World Outliner` 에 생성한 만큼의 `Cone` 인스턴스가 생성된 것을 알 수 있다.  
+![image](https://user-images.githubusercontent.com/48194683/133040981-8dafd429-d4d8-44b7-8ce9-ca4820fd9dc7.png)  
+

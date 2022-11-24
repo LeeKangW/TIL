@@ -1,0 +1,139 @@
+---
+title: Skeletal Mesh Socket을 이용한 무기 장착
+date: 2022-01-24 23:52:00 +0000
+categories: [UE4(TIL), Socket]
+tags: [ue4]     # TAG names should always be lowercase
+---
+
+>Skeletal Mesh Socket을 이용해서 캐릭터에 무기를 장착해보자
+
+# 1. Skeletal Mesh Socket 이란?
+[언리얼 엔진 문서 - 스켈레탈 메시 소켓](https://docs.unrealengine.com/4.27/ko/WorkingWithContent/Types/SkeletalMeshes/Sockets/)  
+
+- 게임에서 캐릭터 본에 오브젝트를 붙이는 경우에 사용
+- Skeleton에서 원하는 위치에 Socket을 생성한 다음 그 Socket 위치에 오브젝트를 생성할 수 있다.
+> 자세한 내용은 공식 문서에서!!
+
+***
+
+# 2. Socket을 붙여보자
+
+>캐릭터의 `Skeleton`을 연 다음 `Skeleton Tree`에서 원하는 위치에 `Socket`을 장착해보자.  
+
+***
+
+#### 1. 원하는 본 위치에서 우클릭을 통해 `Socket`을 생성할 수 있다. (Add Socket)  
+![](https://images.velog.io/images/night/post/69d723e4-e899-4907-95e2-f19ed88621c2/image.png)  
+
+오른손에 무기를 장착시킬 것이기 때문에 `RightHand` 본에 추가해주었다.  
+![](https://images.velog.io/images/night/post/d1f79293-711a-4598-b1c4-d4038155c336/image.png)
+
+***
+
+#### 2. Socket에서 우클릭 시, `Add preview Asset`이 있는데 이걸 통해 임시로 객체를 넣어볼 수 있다.  
+![](https://images.velog.io/images/night/post/9fdb9a3a-639e-4570-9245-b807ea21bb08/image.png)
+
+***
+
+#### 3. 임시로 객체를 넣은 후, 원하는 방향 및 각도를 조절한다.  
+![](https://images.velog.io/images/night/post/5c9e35a1-727c-4dd0-934c-f6d9a20120b4/image.png)
+***
+
+#### 4. Preview Animation 이용해서 Socket의 방향, 각도에 디테일을 살리자
+- 상단 탭에 `Preview Animation`이 있는데  
+이걸 통해 특정 애니메이션을 돌려보면서  좀 더 디테일하게 `Socket`의 방향 또는 각도를 조절할 수 있다.
+![](https://images.velog.io/images/night/post/20bccb61-f624-4409-bc73-00cafdd6e4a9/image.png)
+
+***
+
+# 3. C++ 코드를 통해 장착하자!
+>무기의 정보를 가지고 있는 **Weapon** 이란 이름의 (**Actor를 부모로 한**)클래스를 생성하였습니다.
+
+### 3-1. 변수 생성
+- 무기 객체를 받아올 수 있게 변수를 생성했다.
+```cpp
+UPROPERTY(EditAnywhere,Category="Combat System",meta=(AllowPrivateAccess="true"))
+TSubclassOf<class AWeapon> Sword;
+```
+
+***
+
+### TSubclassOf 이란?
+[언리얼 엔진 문서 - TSubclassOf](https://docs.unrealengine.com/4.26/ko/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/TSubclassOf/)  
+>공식 문서에 설명이 너무 잘 나와 있어 공식 문서 내용을 가져왔습니다.
+
+>TSubclassOf 는 UClass 유형의 안전성을 보장해 주는 템플릿 클래스입니다.  
+>
+>예를 들어  
+>디자이너가 대미지 유형을 지정하도록 해주는 프로젝타일 클래스를 제작중이라 가정합시다.  
+>그냥 UPROPERTY 유형의 UClass 를 만든 다음  
+>디자이너가 **항상 UDamageType 파생 클래스만 할당하기를 바라거나**,  
+>TSubclassOf 템플릿을 사용하여 **선택지를 제한**시킬 수도 있습니다. 그 차이점은 아래 코드와 같습니다:  
+
+- 아래와 같은 선언에서는 **아무 UClass 나 선택할 수 있습니다**.  
+
+```cpp
+/** type of damage */
+UPROPERTY(EditDefaultsOnly, Category=Damage)
+UClass* DamageType;
+```
+
+- 아래와 같이 템플릿 클래스는 에디터의 프로퍼티 창에 **UDamageType 파생 클래스만 선택되도록 합니다**.  
+
+```cpp
+/** type of damage */
+UPROPERTY(EditDefaultsOnly, Category=Damage)
+TSubclassOf<UDamageType> DamageType;
+```
+
+- 아래의 이미지로 파생 클래스만 선택됨을 확인할 수 있습니다.  
+![](https://images.velog.io/images/night/post/d6f7de73-7b68-4d90-8e61-4bb022025450/image.png)
+
+***
+
+### 3-2. Weapon을 세팅하는 메소드 구현
+- 선언
+```cpp
+UFUNCTION()
+void AttachWeapon(TSubclassOf<AWeapon> Weapon) const;
+```
+
+- 정의
+```cpp
+void APlayerCharacter::AttachWeapon(TSubclassOf<AWeapon> Weapon) const
+{
+	if(Weapon)
+	{
+		// Weapon에는 무기 정보만 담겨 있고, 실제 객체는 생성되어 있지 않기 때문에 SpawnActor를 통해 객체를 생성했다.
+		AActor* SpawnWeapon = GetWorld()->SpawnActor<AWeapon>(Weapon);
+		
+		// 위에서 생성한 Socket 이름을 통해 Socket 정보를 가져온다.
+		const USkeletalMeshSocket* WeaponSocket = GetMesh()->GetSocketByName("RightHandWeaponSocket");
+
+		if(WeaponSocket && SpawnWeapon)
+		{
+			// 가져온 Socket에 Actor를 붙인다.
+			WeaponSocket->AttachActor(SpawnWeapon,GetMesh());	
+		}
+	}
+}
+```
+
+- 호출
+```cpp
+// Called when the game starts or when spawned
+void APlayerCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	AttachWeapon(Sword);
+}
+```
+
+***
+
+# 4. 결과
+- 게임 실행 시, 무기가 소켓 위치에 생성되어 정상적으로 작동되는 것을 볼 수 있다.  
+- 위 내용을 토대로, **인벤토리에서 무기를 꺼내 장착**하거나, **무기를 주워 장착하거나** 등 다양한 액션을 구현해볼 수 있다.
+
+{% youtube "https://youtu.be/QOGqrOzAe3w" %}

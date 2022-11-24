@@ -1,0 +1,83 @@
+---
+title: Movement Component
+date: 2022-01-24 23:15:00 +0000
+categories: [UE4(TIL), Pawn]
+tags: [ue4]     # TAG names should always be lowercase
+---
+
+Movement Component
+===
+[언리얼 엔진 공식 문서 - 무브먼트 컴포넌트](https://docs.unrealengine.com/4.27/ko/Basics/Components/Movement/)  
+
+```
+공식 문서의 내용을 옮겨서 작성하였습니다.
+```
+
+`Movement Component` 는 자신이 서브 오브젝트로 달린 액터(또는 캐릭터)에 일정한 형태의 이동을 제공합니다.  
+
+# 1. Movement Component 종류
+
+## CharacterMovementComponent
+- `CharacterMovementComponent`는 **Rigidbody Physics를 사용하지 않는 아바타**가  
+  걷기, 달리기, 점프, 비행, 낙하, 수영을 통해 움직일 수 있도록 해준다.
+- **캐릭터**에 한정된 것으로, 다른 클래스에서는 구현할 수 없다.
+- 블루프린트 생성 시 캐릭터 클래스에 따라 자동으로 추가되며, 수동으로 추가되지 않는다.
+- 설정할 수 있는 Property는 아래와 같이 있다.
+   - 낙하
+   - 걷기 마찰
+   - 비행
+   - 수중 이동 속도
+   - 육지 이동 속도
+   - 부력
+   - 중력 스케일
+   - 캐릭터가 피직스 오브젝트에 행사할 수 있는 물리력
+
+## ProjectileMovementComponent
+- `ProjectileMovementComponent`는 다른 컴포넌트의 틱 도중 그 위치를 업데이트한다.
+  - 충격 이후의 탄성, 목표물에 대한 유도 같은 것이 이러한 컴포넌트 유형에 지원
+- 보통 소유 액터의 루트 컴포넌트가 이용되지만, 다른 컴포넌트를 선택할 수 있다.
+
+## RotationMovementComponent
+- `RotationMovementComponent`는 컴포넌트를 지정된 회전 속도로 계속해서 회전시킨다.
+- **이동 중에 콜리전 테스트가 수행되지 않는다.**  
+
+<br>
+
+# 2. 적용해서 만들어보기
+- `RotationMovementComponent`를 통해 간단하게 적용해볼 예정  
+
+Actor.h 파일   
+```cpp
+UPROPERTY()
+class URotatingMovementComponent* RotatingMovementComponent;
+```
+
+Actor.cpp 파일
+```cpp
+ATESTActor::ATESTActor()
+{
+  // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+    // 서브 오브젝트를 생성해준다
+	RotatingMovementComponent = CreateDefaultSubobject<URotatingMovementComponent>(TEXT("RotatingMovementComponent"));
+}
+
+// Called when the game starts or when spawned
+void ATESTActor::BeginPlay()
+{
+	Super::BeginPlay();
+  
+    // 로테이션 Rate를 세팅해준다.
+    // 세팅해줌으로써, 세팅 값에 맞추어 자동으로 회전하게 된다.
+    // 생성자에 해주어도 상관 없음
+	RotatingMovementComponent->RotationRate = FRotator(50.f,0.f,0.f);
+	placedLocation = GetActorLocation();
+	
+	SetActorLocation(initalLocation);
+}
+```
+
+### 결과
+
+{% youtube "https://youtu.be/KX39bPri3sY" %}

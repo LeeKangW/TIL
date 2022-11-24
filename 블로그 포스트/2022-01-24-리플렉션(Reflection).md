@@ -1,0 +1,164 @@
+---
+title: 리플렉션(Reflection)
+date: 2022-01-24 22:20:00 +0000
+categories: [UE4(TIL), Basic]
+tags: [ue4]     # TAG names should always be lowercase
+---
+
+언리얼 프로퍼티 시스템 (리플렉션)
+===
+[언리얼 엔진 공식 문서 - 언리얼 프로퍼티 시스템 (리플렉션)](https://www.unrealengine.com/ko/blog/unreal-property-system-reflection)  
+[언리얼 엔진 공식 문서 - 프로퍼티 시스템](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Properties/)  
+
+# 1. 리플렉션(Reflection) 이란?
+```
+리플렉션(Reflection)은 프로그램이 실행시간에 자기 자신을 조사하는 기능입니다. 
+이는 엄청나게 유용한 데다 언리얼 엔진 테크놀로지의 근간을 이루는 것으로, 
+에디터의 디테일 패널, 시리얼라이제이션, 가비지 콜렉션, 네트워크 리플리케이션, 블루프린트/C++ 커뮤니케이션 등 
+다수의 시스템에 탑재된 것입니다.
+```
+
+- 리플렉션은 프로그램이 실행시간에 자기 자신을 조사하는 기능
+  - 프로그램의 **런타임 시점**에서 **객체의 정보, 구조를 관리 & 수정 할 수 있게 엑세스** 하는 것
+  - 리플렉션을 통해 엔진은 **객체가 다른 객체에 의해 참조되고 있는지 여부를 결정할 수 있으므로**,   
+[`Garbage Collection`](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/3-2.%20%EC%96%B8%EB%A6%AC%EC%96%BC%20%EC%97%94%EC%A7%84%EC%9D%98%20Garbage%20Collection.md)을 실행 가능할 수 있게 한다.
+
+- `C++`에서는 어떠한 형태의 리플렉션을 **지원하지 않는다.**
+  - 언리얼에서는 자체적으로  
+`C++ 클래스`, `구조체`, `함수`, `멤버 변수`, `열거형` 관련 정보를 수집, 질의, 조작하는 별도의 시스템이 구축되어 있다.
+  - 이러한 리플렉션을 [`프로퍼티 시스템`](https://github.com/LeeKangW/Game_Developer_Document/blob/main/Unreal%20Engine/3-1.%20Property%20System.md) 이라 부른다.
+
+- 리플렉션 시스템은 옵션이고 리플렉션 시스템이 보이도록 했으면 하는 유형이나 프로퍼티에 주석을 달아주면,  
+`Unreal Header Tool(UHT)`가 그 프로젝트를 `컴파일`할 때 해당 정보를 수집한다.
+
+
+### 헤더에 리플렉션이 있는 유형으로 마킹하기
+- 파일 상단에 특수한 Include 추가가 필요
+  - 리플렉션이 있는 유형은 이 파일을 고려해야 함을, 시스템 구현에도 필요함을 UHT에 알려준다.
+```
+// 헤더 파일 선언 맨 마지막에 존재해야 한다.
+// 그래야 원하는 모든 값에 리플렉션을 넣을 수 있다.
+#include "FileName.generated.h"
+```
+- 이를 통해 `UENUM()`, `UCLASS()`, `USTRUCT()`, `UFUNCTION()`, `UPROPERTY()` 를 사용하여 헤더의 다양한 유형과 멤버 변수 주석을 달 수 있다.
+- 이 `매크로`는 각각의 유형 및 멤버 선언 전에 오며, 추가적인 지정자 키워드를 담을 수 있다
+
+***
+
+### 예제 코드를 통해 확인하기
+
+#### 공식 문서 예제 코드
+
+```
+//////////////////////////////////////////////////////////////////////////
+
+// Base class for mobile units (soldiers)
+
+#include "StrategyTypes.h"
+
+#include "StrategyChar.generated.h"
+
+ 
+
+UCLASS(Abstract)
+
+class AStrategyChar : public ACharacter, public IStrategyTeamInterface
+
+{
+
+GENERATED_UCLASS_BODY()
+
+ 
+
+/** How many resources this pawn is worth when it dies. */
+
+UPROPERTY(EditAnywhere, Category=Pawn)
+
+int32 ResourcesToGather;
+
+ 
+
+/** set attachment for weapon slot */
+
+UFUNCTION(BlueprintCallable, Category=Attachment)
+
+void SetWeaponAttachment(class UStrategyAttachment* Weapon);
+
+ 
+
+UFUNCTION(BlueprintCallable, Category=Attachment)
+
+bool IsWeaponAttached();
+
+ 
+
+protected:
+
+/** melee anim */
+
+UPROPERTY(EditDefaultsOnly, Category=Pawn)
+
+UAnimMontage* MeleeAnim;
+
+ 
+
+/** Armor attachment slot */
+
+UPROPERTY()
+
+UStrategyAttachment* ArmorSlot;
+
+ 
+
+/** team number */
+
+uint8 MyTeamNum;
+
+[이하 코드 생략]
+
+};
+```
+
+***
+
+### UCLASS()
+- 리플렉션이 되었음을 나타냄
+  - 리플렉션 관련 정보들을 수집해 저장해두었다고 알려줌
+- 헤더에 `.generated.h` 가 추가됨
+[UCLASS() 지정자](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Classes/Specifiers/)
+
+***
+
+### GENERATED_UCLASS_BODY() 와 GENERATED_USTRUCT_BODY()
+- C++ 정의 안에 작성
+- `UCLASS()` 매크로와 짝을 이룸
+- 매크로가 리플렉션된 것에 대한 추가적인 typedef를 주입해준다.
+
+#### GENERATED_UCLASS_BODY()
+- 리플렉션된 클래스에 필수로 작성
+   
+#### GENERATED_USTRUCT_BODY()
+- 리플렉션된 구조체에 필수로 작성
+
+
+# 2. UHT의 한계
+```
+공식 문서에 적힌 내용입니다.
+```
+
+UHT 는 실제 **C++ 파서**가 아닙니다.  
+해당 언어의 상당 부분을 이해하고 실제로 할 수 있는 만큼 텍스트를 건너뛰기는 하지만, **리플렉션된 유형, 함수, 프로퍼티에만 주의를 기울입니다.**   
+<br>
+
+그러나 몇몇은 여전히 헛갈릴 수 있기에, **기존 헤더에 리플렉션된 유형을 추가할 때는 뭔가 단어를 바꾸거나 #if CPP / #endif 짝으로 둘러싸 줘야 합니다.**
+
+<br>
+
+주석을 단 프로퍼티나 함수에는 (WITH_EDITOR 와 WITH_EDITORONLY_DATA 를 제외하고)  
+#if/#ifdef **사용을 피해야 하는데, generated 코드가 그에 대해 레퍼런싱하여 그 정의가 참이지 않은 경우 환경설정에서 컴파일 에러가 나기 때문입니다.**
+
+대부분의 흔한 유형은 예상대로 작동하나, 프로퍼티 시스템은 가능한 C++ 유형 전부를 나타내지 못합니다  
+(특히 `TArray` 및 `TSubclassOf` 같은 몇몇 템플릿 유형만 지원되며, 그 템플릿 파라미터는 중첩 유형이 될 수 없습니다).
+<br>
+
+UHT 는 실행시간에 나타낼 수 없는 유형을 붙이는 경우 오류 메시지가 뜹니다.

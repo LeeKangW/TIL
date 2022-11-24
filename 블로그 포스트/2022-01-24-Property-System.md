@@ -1,0 +1,95 @@
+---
+title: Property System
+date: 2022-01-24 22:30:00 +0000
+categories: [UE4(TIL), Basic]
+tags: [ue4]     # TAG names should always be lowercase
+---
+
+# 1. Property System
+
+[언리얼 엔진 공식 문서 - Property](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Properties/)  
+
+- 리플렉션 데이터를 사용하기 위해서는 `Property System`을 사용해야 한다.
+
+### Property System 에 대한 유형 계층 구조
+![image](https://user-images.githubusercontent.com/48194683/132482383-2932cd6d-d522-45b2-99af-eadb7535df5c.png)
+- `UStruct`는 기본적인 종합 구조체이며, C++ 구조체(`UScriptStruct`)와 다른 것이다.
+- `UTypeName::StaticClass()` 나 `FTypeName::StaticStruct()` 를 작성하여 **리플렉션된** C++ 유형에 대한 `UClass` 또는 `UScriptStruct` 를 구할 수 있다.
+- `Instance->GetClass()` 를 사용해서 UObejct 인스턴스에 대한 유형을 구할 수 있다.  
+(구조체 인스턴스의 유형을 구하는 것은 **불가능** 한데, 구조체에 대한 공통의 베이스 클래스나 필수 **저장공간이 없기 때문**이다.)  
+(UStruct 모든 멤버에 대한 반복처리를 위해서는, `TFieldIterator` 를 사용해야 한다.)
+
+###  TFieldIterator 세부 내용 (With 코드)
+
+[자세한 내용은 공식 문서를 읽어주세요!](https://www.unrealengine.com/ko/blog/unreal-property-system-reflection#:~:text=UStruct%20%EB%AA%A8%EB%93%A0%20%EB%A9%A4%EB%B2%84%EC%97%90,%EC%95%84%EB%AC%B4%EB%9F%B0%20%ED%9A%A8%EA%B3%BC%EA%B0%80%20%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4.)
+  
+```cpp
+  for (TFieldIterator<UProperty> PropIt(GetClass()); PropIt; ++PropIt)
+
+{
+
+UProperty* Property = *PropIt;
+
+// Do something with the property
+
+}
+```
+
+  
+- 이를 통해 BluePrint에 C++ 객체 또는 메소드를 노출시킬 수 있다.
+- 사용하기 위해 `#include "FileName.generated.h"` 가 추가되어야 한다.  
+  - **헤더 파일 선언 맨 마지막**에 작성해야 한다.
+  - 그래야 원하는 모든 값에 리플렉션을 넣을 수 있다.
+
+### 매크로
+- 매크로 선언을 통해 
+  - 엔진의 `Garbage Collection` 대상으로 지정할 수 있다.
+  - Unreal Editor 안에서 표시 및 편집이 가능하다.
+
+- 각 매크로의 키워드를 사용하여 언리얼 엔진과 에디터 안에서의   
+`클래스`,`함수`,`프로퍼티`,`인터페이스`,`구조체`의 작동 방식을 지정할 수 있다.
+
+#### 멤버 변수에 UPROPERTY() 선언
+[언리얼 공식 문서 - UPROPERTY() 선언 시 사용되는 키워드](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Properties/Specifiers/)
+
+
+#### 클래스에 UCLASS() 선언
+[언리얼 공식 문서 - UCLASS() 선언 시 사용되는 키워드](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Classes/Specifiers/)
+- 계층 자식으로 함수나 프로퍼티 포함 가능
+
+#### 함수에 UFUNCTION() 선언
+[언리얼 공식 문서 - UFUNCTION() 선언 시 사용되는 키워드](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/)  
+- 계층 자식으로 프로퍼티만 가능
+
+***
+
+# 2. 프로퍼티 시스템 작동 원리
+- 공식 문서에 적힌 내용입니다.
+
+```
+Unreal Build Tool (UBT) 와 Unreal Header Tool (UHT) 가 함께하여 실행시간 리플렉션을 강화시키는 데 필요한 데이터를 생성합니다. 
+
+UBT 는 그 역할을 위해 헤더를 스캔한 다음 리플렉션된 유형이 최소 하나 있는 헤더가 들어있는 모듈을 기억합니다. 
+그 헤더 중 어떤 것이든 지난 번 컴파일 이후 변경되었다면, UHT 를 실행하여 리플렉션 데이터를 수집하고 업데이트합니다. 
+
+UHT 는 헤더를 파싱하고, 리플렉션 데이터 세트를 빌드한 다음, 
+(모듈별.generated.inl 에 기여하는) 리플렉션 데이터가 들어있는 C++ 코드를 생성할 뿐만 아니라, 
+(헤더별 .generated.h 인) 다양한 헬퍼 및 thunk 함수도 생성합니다.
+
+리플렉션 데이터를 C++ generated 코드로 저장하는 것의 한 가지 주요 장점은, 바이너리와의 동기화가 보장된다는 점입니다. 
+오래되거나 버전이 맞지 않는 리플렉션 데이터를 로드할 일은 없는데, 나머지 엔진 코드와 함께 컴파일되기 때문입니다. 
+
+그리고 특정 플랫폼/컴파일러/최적화 콤보의 패킹 작동방식을 역엔지니어링하려 하기 보다는, 
+C++ 표현식을 사용해서 시작시 멤버 오프셋/등등을 계산하기 때문입니다. 
+
+UHT 역시도 generated 헤더를 소모하지 않는 독립형 프로그램으로 만들어졌기에, 
+UE3 의 스크립트 컴파일러에서 흔히 발생했던 닭이냐 계란이냐 문제가 생기지 않습니다.
+
+generated 함수에는 StaticClass() / StaticStruct() 같은 것이 포함되어 있어, 
+유형에 대한 리플렉션 데이터를 구하는 것이 쉬워질 뿐만 아니라, 블루프린트나 네트워크 리플렉션에서
+C++ 함수를 호출하는 데 사용되는 thunk 를 구하는 것도 쉬워집니다. 
+
+이는 클래스나 구조체의 일부로 선언되어야 하며, 
+GENERATED_UCLASS_BODY() 또는 GENERATED_USTRUCT_BODY() 매크로가 리플렉션된 유형에 포함되어야 하는지에 대한 이유가 됩니다. 
+이 매크로를 정의하는 #include 'TypeName.generated.h' 는 물론입니다.
+```
